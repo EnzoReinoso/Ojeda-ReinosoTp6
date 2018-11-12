@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>Comunicate conmigo</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="config.xml">
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Manual de armado</a>
+       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="alumnos.html">Alumnos</a>
+            </li>
+     	 </div>
+  		</ul>
+	</div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/fondo1.jpg'); height: 450px">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Comunicate conmigo</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+            <a href="#">
+              <h2 class="post-title">
+                Materiales
+              </h2>
+              </a>
+              <p>
+                Para llevar a cabo este proyecto, se necesitaran los siguientes materiales y componentes:
+                <br>
+                -Arduino Nano o Arduino UNO, dependiendo de donde se quiera montar este dispositivo;
+                <br>
+                -Modulo Bluetooth HC-06;
+                <br>
+                -Matriz LED 8x8 con mudulo MAX7219, preferentemente 3;
+                <br>
+                -Cables para realizar conexiones:
+                <br>  *19 cables hembra-hembra, si se utiliza Arduino NANO;
+                <br>  *10 cables hembra-hembra y 9 cables macho-hembra si se utiliza Arduino UNO;
+                <br><a class="http" href="https://www.arduino.cc/download_handler.php">Descarga el IDE de desarrollo Arduino</a>
+                <br><a class="http" href="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/arudino-maxmatrix-library/MaxMatrix.zip">Descarga de la libreria MaxMatrix</a>
+              </p>
+          </div>
+          <div class="post-preview">
+            <a href="#">
+              <h2 class="post-title">
+                Instrucciones de armado
+              </h2>
+              </a>
+              <h3>
+                Ensamblaje:<br>
+              </h3>
+              <p>
+                <ul>
+                  <li>
+                  1) Conexionado de las multiples pantallas:<br>
+                      *Para este paso necesitaremos disponer de las 3 pantallas y 10 cables hembra-hembra.<br>
+                       -Observando la imagen del diagrama de conexionado conectaremos los pines superiores de una pantalla con los inferiores de otra pantalla. 
+                       <img src="img/pines.jpg" style="height:500px; width:850px">
+                       -Una vez conectada una pantalla con otra, repetir el proceso y conectar otra pantalla. <br>
+                       Debera quedar asi:<br>
+                       <img src="img/pines2.jpg" style="height:500px; width:800px">
+                       
+                  </li><br>
+                  <li>
+                  2) Conexion entre modulo Bluetooth y Arduino:<br>    
+                      *Necesitaremos el modulo Bluetooth HC-06, Arduino NANO y 4 cables hembra-hembra.<br>
+                      -Conectaremos cables en el modulo Bluetooth asegurandonos que hagan buen contacto y esten firmes.<br>
+                      -El cable conectado en el pin del modulo Bluetooth llamado VCC lo ocnectaremos al pin del Arduino llamado 3V3. Luego conectaremos el cable del modulo Bluetooth llamado GND a cualquier pin llamado GND en el Arduino. Continuaremos con el pin TXD que se conectará al pin llamado D6. Finalmente se conectara el cable RXD al pin D7 del Arduino. <br>
+                      Debera quedar asi:<br>
+                     <img src="img/ardui.jpg" style="height:400px; width:500px">
+                      
+                  </li><br>
+                  <li>
+                  3) Conectar Arduino y modulo Bluetooth con las pantallas LED: <br>
+                      Tomaremos la primera pantalla de las 3 conectadas y conectaremos cables hembra-hembra a los pines VCC, GND, DIN, CS, CLK. Procederemos a conectar el cable proveniente del pin VCC al pin llamado 5V del Arduino, el cable proveniente del pin GND a otro pin llamado GND en el Arduino. El cable proveniente del pin DIN se conectara al pin D8 del Arduino, el cable CS al pin D9 y finalmente el cable restante (CLK) se conectara al pin llamado D10 del Arduino, tal como se aprecia en la imagen.<br>
+                  Nota: En caso de usar el modelo UNO de la placa Arduino, se repetiran los mismos pasos, a excepcion de que se necesitarean cables macho-hembra para conectar el modulo Bluetooth y las pantallas a este Arduino.
+                </p> 
+                </li>
+              </ul> 
+          </div>
+              <div class="ima">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <img src="img/conexionado.jpg" style="height:500px; width:1050px">
+           <br>
+              </a>
+              <h3>
+                Programación:<br>
+              </h3>
+                Para este paso, se necesita disponer de una computadora con el ide de desarrollo Arduino instalado y la libreria MaxMatrix, de las cuales dejaremos los enlaces de descarga en la lista de materiales.<br>
+                Una vez que cumplamos con esas 2 cosas, conectaremos el cable USB al Arduino y a la computadora. Una vez abierto el ide de desarrollo Arduino, y conectado el Arduino a la computadora, haremos clic en la pestaña "Herramientas" y luego en la opcion "Placa", de desplegara un lista con modelos de placas Arduino, se seleccionara el modelo NANO o UNO segun corresponda. Luego de esto, nos dirigiremos nuevamente a la pestaña herramientas y haremos clic sobre la opcion "Puerto" y aqui seleccionaremos el puerto en donde aparezca nuestra placa.<br>
+                Finalizado los pasos anteriores, copiaremos el codigo Arduino que se encuentra en esta pagina y lo pegaremos en el ide de desarrollo, borrado previamente lo que se encuentra escrito en el.<br> 
+                El siguiente paso es subir el codigo a la placa, para esto encontraremos en el margen superior dos iconos de manera circular, uno para compilar el codigo y otro para subirlo, si presionamos el boton para subir el codigo, primero se realizara una comprobación del codigo, estre proceso tardara un rato, una vez subido las luces del Arduino parpadearan y esto indicara que el codigo se subio correctamente.  
+    
+           <div class="post-preview">
+            <a href="#">
+              <h2 class="post-title">
+                Codigo Arduino
+              </h2>
+            </a>
+              <textarea disabled cols="60" rows="18">
+              /* Matriz de Desplazamiento LED 8x8 para desarrollar el dispositivo Comunicate conmigo 
+  Desarrollado por el CAJ de la EEST N°4 de Berazategui, Buenos Aires, Argentina   
+*/
+
+#include <MaxMatrix.h>
+#include <avr/pgmspace.h>
+
+PROGMEM unsigned char const CH[] = {
+3, 8, B00000000, B00000000, B00000000, B00000000, B00000000, // space
+1, 8, B01011111, B00000000, B00000000, B00000000, B00000000, // !
+3, 8, B00000011, B00000000, B00000011, B00000000, B00000000, // "
+5, 8, B00010100, B00111110, B00010100, B00111110, B00010100, // #
+4, 8, B00100100, B01101010, B00101011, B00010010, B00000000, // $
+5, 8, B01100011, B00010011, B00001000, B01100100, B01100011, // %
+5, 8, B00110110, B01001001, B01010110, B00100000, B01010000, // &
+1, 8, B00000011, B00000000, B00000000, B00000000, B00000000, // '
+3, 8, B00011100, B00100010, B01000001, B00000000, B00000000, // (
+3, 8, B01000001, B00100010, B00011100, B00000000, B00000000, // )
+5, 8, B00101000, B00011000, B00001110, B00011000, B00101000, // *
+5, 8, B00001000, B00001000, B00111110, B00001000, B00001000, // +
+2, 8, B10110000, B01110000, B00000000, B00000000, B00000000, // ,
+4, 8, B00001000, B00001000, B00001000, B00001000, B00000000, // -
+2, 8, B01100000, B01100000, B00000000, B00000000, B00000000, // .
+4, 8, B01100000, B00011000, B00000110, B00000001, B00000000, // /
+4, 8, B00111110, B01000001, B01000001, B00111110, B00000000, // 0
+3, 8, B01000010, B01111111, B01000000, B00000000, B00000000, // 1
+4, 8, B01100010, B01010001, B01001001, B01000110, B00000000, // 2
+4, 8, B00100010, B01000001, B01001001, B00110110, B00000000, // 3
+4, 8, B00011000, B00010100, B00010010, B01111111, B00000000, // 4
+4, 8, B00100111, B01000101, B01000101, B00111001, B00000000, // 5
+4, 8, B00111110, B01001001, B01001001, B00110000, B00000000, // 6
+4, 8, B01100001, B00010001, B00001001, B00000111, B00000000, // 7
+4, 8, B00110110, B01001001, B01001001, B00110110, B00000000, // 8
+4, 8, B00000110, B01001001, B01001001, B00111110, B00000000, // 9
+2, 8, B01010000, B00000000, B00000000, B00000000, B00000000, // :
+2, 8, B10000000, B01010000, B00000000, B00000000, B00000000, // ;
+3, 8, B00010000, B00101000, B01000100, B00000000, B00000000, // <
+3, 8, B00010100, B00010100, B00010100, B00000000, B00000000, // =
+3, 8, B01000100, B00101000, B00010000, B00000000, B00000000, // >
+4, 8, B00000010, B01011001, B00001001, B00000110, B00000000, // ?
+5, 8, B00111110, B01001001, B01010101, B01011101, B00001110, // @
+4, 8, B01111110, B00010001, B00010001, B01111110, B00000000, // A
+4, 8, B01111111, B01001001, B01001001, B00110110, B00000000, // B
+4, 8, B00111110, B01000001, B01000001, B00100010, B00000000, // C
+4, 8, B01111111, B01000001, B01000001, B00111110, B00000000, // D
+4, 8, B01111111, B01001001, B01001001, B01000001, B00000000, // E
+4, 8, B01111111, B00001001, B00001001, B00000001, B00000000, // F
+4, 8, B00111110, B01000001, B01001001, B01111010, B00000000, // G
+4, 8, B01111111, B00001000, B00001000, B01111111, B00000000, // H
+3, 8, B01000001, B01111111, B01000001, B00000000, B00000000, // I
+4, 8, B00110000, B01000000, B01000001, B00111111, B00000000, // J
+4, 8, B01111111, B00001000, B00010100, B01100011, B00000000, // K
+4, 8, B01111111, B01000000, B01000000, B01000000, B00000000, // L
+5, 8, B01111111, B00000010, B00001100, B00000010, B01111111, // M
+5, 8, B01111111, B00000100, B00001000, B00010000, B01111111, // N
+4, 8, B00111110, B01000001, B01000001, B00111110, B00000000, // O
+4, 8, B01111111, B00001001, B00001001, B00000110, B00000000, // P
+4, 8, B00111110, B01000001, B01000001, B10111110, B00000000, // Q
+4, 8, B01111111, B00001001, B00001001, B01110110, B00000000, // R
+4, 8, B01000110, B01001001, B01001001, B00110010, B00000000, // S
+5, 8, B00000001, B00000001, B01111111, B00000001, B00000001, // T
+4, 8, B00111111, B01000000, B01000000, B00111111, B00000000, // U
+5, 8, B00001111, B00110000, B01000000, B00110000, B00001111, // V
+5, 8, B00111111, B01000000, B00111000, B01000000, B00111111, // W
+5, 8, B01100011, B00010100, B00001000, B00010100, B01100011, // X
+5, 8, B00000111, B00001000, B01110000, B00001000, B00000111, // Y
+4, 8, B01100001, B01010001, B01001001, B01000111, B00000000, // Z
+2, 8, B01111111, B01000001, B00000000, B00000000, B00000000, // [
+4, 8, B00000001, B00000110, B00011000, B01100000, B00000000, // \ backslash
+2, 8, B01000001, B01111111, B00000000, B00000000, B00000000, // ]
+3, 8, B00000010, B00000001, B00000010, B00000000, B00000000, // hat
+4, 8, B01000000, B01000000, B01000000, B01000000, B00000000, // _
+2, 8, B00000001, B00000010, B00000000, B00000000, B00000000, // `
+4, 8, B00100000, B01010100, B01010100, B01111000, B00000000, // a
+4, 8, B01111111, B01000100, B01000100, B00111000, B00000000, // b
+4, 8, B00111000, B01000100, B01000100, B00101000, B00000000, // c
+4, 8, B00111000, B01000100, B01000100, B01111111, B00000000, // d
+4, 8, B00111000, B01010100, B01010100, B00011000, B00000000, // e
+3, 8, B00000100, B01111110, B00000101, B00000000, B00000000, // f
+4, 8, B10011000, B10100100, B10100100, B01111000, B00000000, // g
+4, 8, B01111111, B00000100, B00000100, B01111000, B00000000, // h
+3, 8, B01000100, B01111101, B01000000, B00000000, B00000000, // i
+4, 8, B01000000, B10000000, B10000100, B01111101, B00000000, // j
+4, 8, B01111111, B00010000, B00101000, B01000100, B00000000, // k
+3, 8, B01000001, B01111111, B01000000, B00000000, B00000000, // l
+5, 8, B01111100, B00000100, B01111100, B00000100, B01111000, // m
+4, 8, B01111100, B00000100, B00000100, B01111000, B00000000, // n
+4, 8, B00111000, B01000100, B01000100, B00111000, B00000000, // o
+4, 8, B11111100, B00100100, B00100100, B00011000, B00000000, // p
+4, 8, B00011000, B00100100, B00100100, B11111100, B00000000, // q
+4, 8, B01111100, B00001000, B00000100, B00000100, B00000000, // r
+4, 8, B01001000, B01010100, B01010100, B00100100, B00000000, // s
+3, 8, B00000100, B00111111, B01000100, B00000000, B00000000, // t
+4, 8, B00111100, B01000000, B01000000, B01111100, B00000000, // u
+5, 8, B00011100, B00100000, B01000000, B00100000, B00011100, // v
+5, 8, B00111100, B01000000, B00111100, B01000000, B00111100, // w
+5, 8, B01000100, B00101000, B00010000, B00101000, B01000100, // x
+4, 8, B10011100, B10100000, B10100000, B01111100, B00000000, // y
+3, 8, B01100100, B01010100, B01001100, B00000000, B00000000, // z
+3, 8, B00001000, B00110110, B01000001, B00000000, B00000000, // {
+1, 8, B01111111, B00000000, B00000000, B00000000, B00000000, // |
+3, 8, B01000001, B00110110, B00001000, B00000000, B00000000, // }
+4, 8, B00001000, B00000100, B00001000, B00000100, B00000000, // ~
+};
+
+int data = 8;    // DIN pin del modulo MAX7219
+int load = 9;    // CS pin del modulo MAX7219
+int clock = 10;  // CLK pin del modulo MAX7219 
+
+int maxInUse = 3;    //Cambie este valor dependiendo del numero de matrices que use
+
+MaxMatrix m(data, load, clock, maxInUse); // Define el modulo
+
+byte buffer[10];
+
+
+char mensaje1[] = " ... "; //Escriba el mensaje a desplegar 
+char mensaje2[] = "";
+
+void setup(){
+  pinMode(8,OUTPUT);       //Conexion a DIN
+  pinMode(9,OUTPUT);       //Conexion a CS
+  pinMode(10,OUTPUT);      //Conexion a CLK
+  m.init();               // inicializa el modulo
+  m.setIntensity(5);      // intencidad de los puntos de la matriz, entre 1-5
+  Serial.begin(9600);     // inicializa el puerto serial
+}
+
+void loop(){
+  byte c;
+                                  // Lee el mensaje que llega por el puerto serial
+  while (Serial.available() > 0){
+    byte c = Serial.read();
+    Serial.println(c, DEC);
+    printCharWithShift(c, 100);
+  }
+  delay(100);                 // Tiempo de inicio de un nuevo Ciclo de mensajes
+  m.shiftLeft(false, true);
+  
+  // Despliega los mensajes almacenados en las variables 
+ 
+  printStringWithShift(mensaje1, 40);       // El ultimo termino se usa para la velocidad del mensaje 
+
+}
+
+void printCharWithShift(char c, int shift_speed){    // Imprime caracteres
+  if (c < 32) return;
+  c -= 32;
+  memcpy_P(buffer, CH + 7*c, 7);
+  m.writeSprite(maxInUse*8, 0, buffer);
+  m.setColumn(maxInUse*8 + buffer[0], 0);
+  
+  for (int i=0; i<buffer[0]+1; i++) 
+  {
+    delay(shift_speed);
+    m.shiftLeft(false, false);
+  }
+}
+
+void printStringWithShift(char* s, int shift_speed){        // Imprime cadena de caracteres
+  while (*s != 0){
+    printCharWithShift(*s, shift_speed);
+    s++;
+  }
+}
+
+void printString(char* s)                            // Imprime cadena
+{
+  int col = 0;
+  while (*s != 0)
+  {
+    if (*s < 32) continue;
+    char c = *s - 32;
+    memcpy_P(buffer, CH + 7*c, 7);
+    m.writeSprite(col, 0, buffer);
+    m.setColumn(col + buffer[0], 0);
+    col += buffer[0] + 1;
+    s++;
+  }
+} 
+
+              </textarea>
+          </div>
+          <hr>
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-right" href="#">Volver arriba &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/cice_exploramente/?hl=es-la">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/ExploraMentecice/">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Ojeda Leandro & Reinoso Enzo. All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/clean-blog.min.js"></script>
+
+    <script type="text/javascript" src="js/Toast.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
