@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="config.xml">
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
 </head>
 
 <body>
@@ -89,10 +90,10 @@
                   1) Conexionado de las multiples pantallas:<br>
                       *Para este paso necesitaremos disponer de las 3 pantallas y 10 cables hembra-hembra.<br>
                        -Observando la imagen del diagrama de conexionado conectaremos los pines superiores de una pantalla con los inferiores de otra pantalla. 
-                       <img src="img/pines.jpg" style="height:500px; width:850px">
+                       <img src="img/pines.jpg" >
                        -Una vez conectada una pantalla con otra, repetir el proceso y conectar otra pantalla. <br>
                        Debera quedar asi:<br>
-                       <img src="img/pines2.jpg" style="height:500px; width:800px">
+                       <img src="img/pines2.jpg" >
                        
                   </li><br>
                   <li>
@@ -101,35 +102,33 @@
                       -Conectaremos cables en el modulo Bluetooth asegurandonos que hagan buen contacto y esten firmes.<br>
                       -El cable conectado en el pin del modulo Bluetooth llamado VCC lo ocnectaremos al pin del Arduino llamado 3V3. Luego conectaremos el cable del modulo Bluetooth llamado GND a cualquier pin llamado GND en el Arduino. Continuaremos con el pin TXD que se conectará al pin llamado D6. Finalmente se conectara el cable RXD al pin D7 del Arduino. <br>
                       Debera quedar asi:<br>
-                     <img src="img/ardui.jpg" style="height:400px; width:500px">
+                     <img src="img/ardui.jpg">
                       
                   </li><br>
                   <li>
                   3) Conectar Arduino y modulo Bluetooth con las pantallas LED: <br>
                       Tomaremos la primera pantalla de las 3 conectadas y conectaremos cables hembra-hembra a los pines VCC, GND, DIN, CS, CLK. Procederemos a conectar el cable proveniente del pin VCC al pin llamado 5V del Arduino, el cable proveniente del pin GND a otro pin llamado GND en el Arduino. El cable proveniente del pin DIN se conectara al pin D8 del Arduino, el cable CS al pin D9 y finalmente el cable restante (CLK) se conectara al pin llamado D10 del Arduino, tal como se aprecia en la imagen.<br>
                   Nota: En caso de usar el modelo UNO de la placa Arduino, se repetiran los mismos pasos, a excepcion de que se necesitarean cables macho-hembra para conectar el modulo Bluetooth y las pantallas a este Arduino.
-                </p> 
+              
                 </li>
-              </ul> 
-          </div>
-              <div class="ima">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <img src="img/conexionado.jpg" style="height:500px; width:1050px">
-           <br>
-              </a>
+              
+                <img src="img/conexionado.jpg">
+           
+            </ul>
+       		 </p>
+       		 </a>
+     		</div>
+     	<div class="post-preview">
               <h3>
                 Programación:<br>
               </h3>
+              
                 Para este paso, se necesita disponer de una computadora con el ide de desarrollo Arduino instalado y la libreria MaxMatrix, de las cuales dejaremos los enlaces de descarga en la lista de materiales.<br>
                 Una vez que cumplamos con esas 2 cosas, conectaremos el cable USB al Arduino y a la computadora. Una vez abierto el ide de desarrollo Arduino, y conectado el Arduino a la computadora, haremos clic en la pestaña "Herramientas" y luego en la opcion "Placa", de desplegara un lista con modelos de placas Arduino, se seleccionara el modelo NANO o UNO segun corresponda. Luego de esto, nos dirigiremos nuevamente a la pestaña herramientas y haremos clic sobre la opcion "Puerto" y aqui seleccionaremos el puerto en donde aparezca nuestra placa.<br>
                 Finalizado los pasos anteriores, copiaremos el codigo Arduino que se encuentra en esta pagina y lo pegaremos en el ide de desarrollo, borrado previamente lo que se encuentra escrito en el.<br> 
                 El siguiente paso es subir el codigo a la placa, para esto encontraremos en el margen superior dos iconos de manera circular, uno para compilar el codigo y otro para subirlo, si presionamos el boton para subir el codigo, primero se realizara una comprobación del codigo, estre proceso tardara un rato, una vez subido las luces del Arduino parpadearan y esto indicara que el codigo se subio correctamente.  
-    
-           <div class="post-preview">
+    </div>
+    <div class="post-preview">
             <a href="#">
               <h2 class="post-title">
                 Codigo Arduino
@@ -327,6 +326,7 @@ void printString(char* s)                            // Imprime cadena
         </div>
       </div>
     </div>
+    
 
     <hr>
 
